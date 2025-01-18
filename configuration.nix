@@ -2,7 +2,7 @@
 # while certain plugins are enabled. While it may act as one, this is not an overview of nvf's
 # module options. To find a complete overview of nvf's options and examples, visit the manual.
 # https://notashelf.github.io/nvf/options.html
-{config, pkgs, ...}: {
+{pkgs, ...}: {
   config.vim = {
     viAlias = true;
     vimAlias = true;

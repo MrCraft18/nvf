@@ -45,52 +45,6 @@ isMaximal: {
 
       # Languages that will be supported in default and maximal configurations.
       nix.enable = true;
-      markdown.enable = true;
-
-      # Languages that are enabled in the maximal configuration.
-      bash.enable = isMaximal;
-      clang.enable = isMaximal;
-      css.enable = isMaximal;
-      html.enable = isMaximal;
-      sql.enable = isMaximal;
-      java.enable = isMaximal;
-      kotlin.enable = isMaximal;
-      ts.enable = isMaximal;
-      go.enable = isMaximal;
-      lua.enable = isMaximal;
-      zig.enable = isMaximal;
-      python.enable = isMaximal;
-      typst.enable = isMaximal;
-      rust = {
-        enable = isMaximal;
-        crates.enable = isMaximal;
-      };
-
-      # Language modules that are not as common.
-      assembly.enable = false;
-      astro.enable = false;
-      nu.enable = false;
-      csharp.enable = false;
-      julia.enable = false;
-      vala.enable = false;
-      scala.enable = false;
-      r.enable = false;
-      gleam.enable = false;
-      dart.enable = false;
-      ocaml.enable = false;
-      elixir.enable = false;
-      haskell.enable = false;
-      ruby.enable = false;
-
-      tailwind.enable = false;
-      svelte.enable = false;
-
-      # Nim LSP is broken on Darwin and therefore
-      # should be disabled by default. Users may still enable
-      # `vim.languages.vim` to enable it, this does not restrict
-      # that.
-      # See: <https://github.com/PMunch/nimlsp/issues/178#issue-2128106096>
-      nim.enable = false;
     };
 
     visuals = {
@@ -110,16 +64,23 @@ isMaximal: {
     statusline = {
       lualine = {
         enable = true;
-        theme = "catppuccin";
+        theme = "onedark";
       };
     };
 
-    theme = {
-      enable = true;
-      name = "catppuccin";
-      style = "mocha";
-      transparent = false;
-    };
+                lazy.plugins = {
+                    "onedarkpro.nvim" = {
+                        package = pkgs.vimPlugins.onedarkpro-nvim;
+                        setupModule = "onedarkpro";
+                        setupOpts = { colors.onedark.bg = "#16181c"; };
+                        after = ''vim.cmd("colorscheme onedark")'';
+                    };
+
+                    "oil.nvim" = {
+                        package = pkgs.vimPlugins.oil-nvim;
+                        setupModule = "oil";
+                    };
+                };'
 
     autopairs.nvim-autopairs.enable = true;
 

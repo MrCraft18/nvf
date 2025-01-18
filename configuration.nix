@@ -80,7 +80,7 @@ isMaximal: {
                         package = pkgs.vimPlugins.oil-nvim;
                         setupModule = "oil";
                     };
-                };'
+                };
 
     autopairs.nvim-autopairs.enable = true;
 

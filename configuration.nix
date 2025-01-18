@@ -2,7 +2,7 @@
 # while certain plugins are enabled. While it may act as one, this is not an overview of nvf's
 # module options. To find a complete overview of nvf's options and examples, visit the manual.
 # https://notashelf.github.io/nvf/options.html
-isMaximal: {
+{config, pkgs, ...}: {
   config.vim = {
     viAlias = true;
     vimAlias = true;
@@ -23,9 +23,9 @@ isMaximal: {
       lspsaga.enable = false;
       trouble.enable = true;
       lspSignature.enable = true;
-      otter-nvim.enable = isMaximal;
-      lsplines.enable = isMaximal;
-      nvim-docs-view.enable = isMaximal;
+      otter-nvim.enable = true;
+      lsplines.enable = true;
+      nvim-docs-view.enable = true;
     };
 
     debugger = {
@@ -48,7 +48,7 @@ isMaximal: {
     };
 
     visuals = {
-      nvim-scrollbar.enable = isMaximal;
+      nvim-scrollbar.enable = true;
       nvim-web-devicons.enable = true;
       nvim-cursorline.enable = true;
       cinnamon-nvim.enable = true;
@@ -114,12 +114,12 @@ isMaximal: {
 
     minimap = {
       minimap-vim.enable = false;
-      codewindow.enable = isMaximal; # lighter, faster, and uses lua for configuration
+      codewindow.enable = true; # lighter, faster, and uses lua for configuration
     };
 
     dashboard = {
       dashboard-nvim.enable = false;
-      alpha.enable = isMaximal;
+      alpha.enable = true;
     };
 
     notify = {
@@ -127,19 +127,19 @@ isMaximal: {
     };
 
     projects = {
-      project-nvim.enable = isMaximal;
+      project-nvim.enable = true;
     };
 
     utility = {
       ccc.enable = false;
       vim-wakatime.enable = false;
-      icon-picker.enable = isMaximal;
-      surround.enable = isMaximal;
+      icon-picker.enable = true;
+      surround.enable = true;
       diffview-nvim.enable = true;
       motion = {
         hop.enable = true;
         leap.enable = true;
-        precognition.enable = isMaximal;
+        precognition.enable = true;
       };
 
       images = {
@@ -151,7 +151,7 @@ isMaximal: {
       obsidian.enable = false; # FIXME: neovim fails to build if obsidian is enabled
       neorg.enable = false;
       orgmode.enable = false;
-      mind-nvim.enable = isMaximal;
+      mind-nvim.enable = true;
       todo-comments.enable = true;
     };
 
@@ -169,8 +169,8 @@ isMaximal: {
       modes-nvim.enable = false; # the theme looks terrible with catppuccin
       illuminate.enable = true;
       breadcrumbs = {
-        enable = isMaximal;
-        navbuddy.enable = isMaximal;
+        enable = true;
+        navbuddy.enable = true;
       };
       smartcolumn = {
         enable = true;
@@ -189,7 +189,7 @@ isMaximal: {
       chatgpt.enable = false;
       copilot = {
         enable = false;
-        cmp.enable = isMaximal;
+        cmp.enable = true;
       };
     };
 
